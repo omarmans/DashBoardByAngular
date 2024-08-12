@@ -1,0 +1,26 @@
+<div class="uploads p-20 bg-white rad-10 txt-c-mobile ovr-hidd">
+  <h2 class="mt-0 mb-20">Latest Uploads</h2>
+  <div
+    class="files between-flex transition-5 pointer"
+    *ngFor="let file of latestUploads"
+    (click)="downloadFile(file.fileImage)"
+  >
+    <div class="file-data justi-sp-bt">
+      <img
+        src="assets/DATA&IMGS/page1/uploads/{{ file.fileImage }}"
+        alt=""
+        class="img-64 mr-10 pb-10"
+      />
+      <div class="data-info">
+        <h3 class="mt-0">{{ file.fileName }}</h3>
+        <p class="c-grey mb-20">{{ file.uploader }}</p>
+      </div>
+    </div>
+    <div class="file-width btn-shape bg-eee fs-15">
+      {{ file.fileSize }}
+    </div>
+  </div>
+</div>
+
+<!-- ممكن تتعمل ب ulعادي
+ -->

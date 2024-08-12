@@ -1,0 +1,32 @@
+<div class="plans-page">
+  <app-title title="Plans"></app-title>
+  <div class="plans d-grid m-20 gap-20">
+    <div class="plan {{ plan.color }} bg-white p-20" *ngFor="let plan of plans">
+      <div class="top bg-{{ plan.color }} txt-c p-20">
+        <h2 class="m-0 c-white">{{ plan.type }}</h2>
+        <div class="price c-white"><span>$</span>{{ plan.price }}</div>
+      </div>
+      <ul>
+        <li *ngFor="let feat of plan.features">
+          <i
+            *ngIf="feat.available"
+            [ngStyle]="{ color: feat.available ? 'green' : 'red' }"
+            class="fa-solid fa-check fa-fw"
+          ></i>
+          <i
+            *ngIf="!feat.available"
+            class="fa-solid fa-xmark fa-fw"
+            [ngStyle]="{ color: feat.available ? 'green' : 'red' }"
+          ></i>
+          <span>{{ feat.feature }}</span>
+          <i class="fa-solid fa-circle-info help c-grey"></i>
+        </li>
+      </ul>
+      <a
+        href="#"
+        class="btn-shape bg-{{ plan.color }} mt-15 c-white d-block w-fit"
+        >{{ plan.linkText }}</a
+      >
+    </div>
+  </div>
+</div>

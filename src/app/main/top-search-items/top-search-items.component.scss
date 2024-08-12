@@ -1,0 +1,11 @@
+@import "../../../styles.scss";
+.tasks {
+  display: flex;
+  flex-direction: column;
+  .t-head,
+  .count {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

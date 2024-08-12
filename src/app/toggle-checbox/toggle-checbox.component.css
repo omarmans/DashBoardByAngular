@@ -1,0 +1,40 @@
+label input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: none;
+}
+label input:checked + div {
+  background-color: #0075ff;
+}
+label input:checked + div::before {
+  left: 50px;
+  color: #0075ff;
+  content: "\f00c";
+  transform: scale(1turn);
+}
+label div {
+  background-color: #ccc;
+  width: 78px;
+  height: 32px;
+  border-radius: 16px;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+}
+label div::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00d";
+  font-weight: 900;
+  background-color: white;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  border-radius: 50%;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}/*# sourceMappingURL=toggle-checbox.component.css.map */

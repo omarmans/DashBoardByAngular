@@ -1,0 +1,96 @@
+@import "../../styles.scss";
+
+.projects {
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  .project {
+    position: relative;
+    transition: 0.5s;
+    &:hover {
+      background-color: #ddd;
+    }
+    .date {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .teams_member,
+    .task-words {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+    .teams_member {
+      position: relative;
+      min-height: 80px;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      a {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid white;
+          transition: 0.5s;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+    .task-words {
+      justify-content: flex-end;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+      margin-top: 15px;
+      border-bottom: 1px solid #eee;
+      span {
+        padding: 3px 8px;
+        margin-left: 5px;
+        width: fit-content;
+      }
+    }
+    .progress-cost {
+      justify-content: space-between;
+      align-items: center;
+      .progress {
+        height: 8px;
+        width: 260px;
+        position: relative;
+        border-radius: 6px;
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .projects {
+      grid-template-columns: minmax(200px, 1fr);
+      margin-left: 10px;
+      margin-right: 10px;
+      gap: 10px;
+    }
+    .description {
+      overflow-wrap: break-word; /* يضمن كسر الكلمات الطويلة لتتناسب مع العرض */
+    }
+    .task-words {
+      flex-direction: column;
+
+      span {
+        margin-bottom: 10px;
+      }
+    }
+    .progress-cost {
+      .progress {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../../../Shared/Shared.scss";
+@import "../../../styles.scss";
+.QuickDraft {
+  //nothing
+
+  .save {
+    margin: 0 15px 15px auto;
+    background-color: $blue-alt-color;
+    transition: 0.5s;
+    &:hover {
+      background-color: $blue-color;
+    }
+  }
+}

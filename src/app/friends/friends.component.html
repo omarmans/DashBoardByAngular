@@ -1,0 +1,45 @@
+<!-- <p>friends works!</p> -->
+<div class="friends-page">
+  <app-title title="Friends"></app-title>
+  <div class="friends d-grid m-20 gap-20">
+    <div
+      class="friend bg-white rad-6 p-20 p-relative"
+      *ngFor="let friend of friendsArray"
+    >
+      <div class="contact-icons">
+        <i class="fa-solid fa-phone fa-beat"></i>
+        <i class="fa-solid fa-envelope fa-beat"></i>
+      </div>
+      <div class="friend-info">
+        <img src="assets/DATA&IMGS/friendPage/{{ friend.img }}" class="mb-5" />
+        <h4 class="m-0">{{ friend.name }}</h4>
+        <p class="c-grey fs-15 mb-10">{{ friend.title }}</p>
+      </div>
+      <div class="icons">
+        <div class="icon">
+          <i class="fa-regular fa-face-smile fa-fw"></i>
+          <span>{{ friend.friends }}</span>
+        </div>
+      </div>
+      <div class="icons">
+        <div class="icon">
+          <i class="fa-solid fa-code-commit fa-fw"></i>
+          <span>{{ friend.projects }}</span>
+        </div>
+        <div class="icon">
+          <i class="fa-regular fa-newspaper fa-fw"></i>
+          <span>{{ friend.articles }}</span>
+        </div>
+      </div>
+      <div class="date-Btns d-flex">
+        <span class="c-grey fs-14 mt-10 mb-10 d-block"
+          >Joined {{ friend.joined }}</span
+        >
+        <div class="btns">
+          <a href="#" class="btn-shape bg-blue c-white">Profile</a>
+          <a href="#" class="btn-shape bg-red c-white">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

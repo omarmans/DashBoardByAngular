@@ -1,0 +1,49 @@
+// @import "../../../Shared/Shared.scss";
+@import "../../../../Shared/Shared.scss";
+@import "../../../styles.scss";
+
+.last-project-prog {
+  ul::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 2px;
+    height: 100%;
+    background-color: $blue-color;
+  }
+  li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid white;
+    outline: 2px solid $blue-color;
+    margin-right: 15px;
+    z-index: 1;
+  }
+  ul li.done::before {
+    background-color: blue;
+  }
+  ul li.current::before {
+    animation: changBGR 0.5s infinite alternate;
+  }
+
+  .lunch {
+    position: absolute;
+    right: 0;
+    width: 160px;
+    bottom: 0;
+    opacity: 0.1;
+  }
+}
+
+@keyframes changBGR {
+  from {
+    background-color: blue;
+  }
+  to {
+    background-color: white;
+  }
+}

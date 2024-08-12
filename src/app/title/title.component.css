@@ -1,0 +1,19 @@
+h1 {
+  margin: 20px 20px 40px;
+  position: relative;
+}
+h1::before, h1::after {
+  content: "";
+  height: 3px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+h1::before {
+  background-color: white;
+  width: 120px;
+}
+h1::after {
+  background-color: black;
+  width: 40px;
+}/*# sourceMappingURL=title.component.css.map */

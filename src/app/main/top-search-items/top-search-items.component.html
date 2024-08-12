@@ -1,0 +1,11 @@
+<div class="tasks p-20 bg-white rad-10 txt-c-mobile">
+  <h2 class="mt-0 mb-20">Top Search Items</h2>
+  <div class="t-head c-grey">
+    <p>Keyword</p>
+    <p>Search Count</p>
+  </div>
+  <div class="count" *ngFor="let item of searchItems">
+    <p class="fw-bold">{{ item.keyword }}</p>
+    <p class="btn-shape fs-13 bg-eee">{{ item.searchCount }}</p>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+@import "../../../styles.scss";
+.task-row {
+  transition: 1s;
+  flex-grow: 1;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+    border-bottom: 3px solid #777;
+  }
+  i {
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+      color: red;
+    }
+  }
+  // &:nth-child(3) {
+  //   opacity: 0.2;
+  //   .info-task {
+  //     h3,
+  //     p {
+  //       text-decoration: line-through;
+  //     }
+  //   }
+  //   i {
+  //     display: none;
+  //   }
+  // }
+}
+
+.line_through {
+  h3,
+  p {
+    text-decoration: line-through;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-task {
+    text-align: left;
+    padding: 5px;
+  }
+}

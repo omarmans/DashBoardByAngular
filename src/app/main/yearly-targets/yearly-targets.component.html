@@ -1,0 +1,29 @@
+<div class="Yearly-Targets p-20 bg-white rad-10" #target>
+  <h2 class="m-0 mb-10">Yearly-Targets</h2>
+  <p class="c-grey mt-0 mb-20 fs-15">Targets Of The Year</p>
+  <div
+    *ngFor="let detail of details"
+    [ngClass]="'traget-rows mb-20 ' + detail.color + ' d-flex align-center'"
+  >
+    <div class="icon center-flex">
+      <i
+        class="fa-solid fa-lg"
+        [ngClass]="detail.icon + ' c-' + detail.color"
+      ></i>
+    </div>
+    <div class="details">
+      <span class="fs-14 c-grey">{{ detail.title }}</span>
+      <span class="d-block mt-5 mb-10 fw-bold">{{ detail.value }}</span>
+      <div class="progress p-relative">
+        <span
+          [ngStyle]="{ width: grow_smozzy ? detail.progress + '%' : '0%' }"
+          class="bg-{{ detail.color }} {{ detail.color }}"
+        >
+          <span [ngClass]="'bg-' + detail.color + ' ' + detail.color"
+            >{{ grow_smozzy ? detail.progress : 0 }}%</span
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

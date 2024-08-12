@@ -1,0 +1,36 @@
+<div class="projects p-20 bg-white rad-10 m-20">
+  <h2 class="mb-20 mt-0">Projects</h2>
+  <div class="responsive-table">
+    <table class="fs-15 w-full">
+      <thead>
+        <tr>
+          <td *ngFor="let header of headers">
+            {{ header }}
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects">
+          <td>{{ project.name }}</td>
+          <td>{{ project.finishDate }}</td>
+          <td>{{ project.client }}</td>
+          <td>{{ project.price }}</td>
+          <td>
+            <img
+              *ngFor="let img of project.team"
+              src="assets/DATA&IMGS/page1/team/{{ img }}"
+              alt=""
+            />
+          </td>
+          <td>
+            <span
+              [ngStyle]="{ 'background-color': project.statusColor }"
+              class="label btn-shape c-white"
+              >{{ project.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

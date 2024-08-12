@@ -1,0 +1,15 @@
+<div class="social-media p-20 bg-white rad-10 txt-c-mobile ovr-hidd p-relative">
+  <h2 class="mt-0 mb-20">Projects</h2>
+  <table>
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td *ngFor="let person of projects">{{ person.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

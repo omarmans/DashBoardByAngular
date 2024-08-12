@@ -1,0 +1,16 @@
+<div class="tasks p-20 bg-white rad-10 txt-c-mobile">
+  <h2 class="mt-0 mb-20">Latest Tasks</h2>
+  <div class="tasks-rows">
+    <div class="task-row between-flex" *ngFor="let task of tasks">
+      <div class="info-task" [ngClass]="{ line_through: task.trhow }">
+        <h3 class="mt-0 mb-20">{{ task.taskName }}</h3>
+        <p class="c-grey mb-20">{{ task.description }}</p>
+      </div>
+      <i
+        class="fa-regular fa-trash-can delete"
+        *ngIf="!task.trhow"
+        (click)="through_line(task)"
+      ></i>
+    </div>
+  </div>
+</div>

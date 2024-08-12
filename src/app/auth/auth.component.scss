@@ -1,0 +1,109 @@
+@import "../../styles.scss";
+.errmsg {
+  color: #dc3545; /* لون النص الأحمر */
+  background-color: #f8d7da; /* خلفية خفيفة */
+  border: 1px solid #f5c6cb; /* حدود بلون أخف */
+  padding: 10px; /* تباعد داخلي */
+  text-align: center;
+  border-radius: 5px; /* زوايا دائرية */
+}
+.form-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  transition: 0.6s;
+}
+
+.form-box h1,
+h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.form-box .user-box {
+  position: relative;
+}
+
+.form-box .user-box input,
+.form-box .user-box select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.form-box .user-box label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 5px;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.form-box .user-box input:focus ~ label,
+.form-box .user-box input:valid ~ label,
+.form-box .user-box select:focus ~ label {
+  top: -25px;
+  margin-bottom: 5px;
+  left: 0;
+  color: #03e9f4;
+  font-size: 12px;
+  border-radius: 10px;
+  padding: 10px 5px;
+}
+
+.form-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+button {
+  margin-bottom: 10px;
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    letter-spacing: 1.2px;
+    background-color: #eee;
+    font-weight: bold;
+  }
+}
+select option {
+  color: black;
+  margin: 5px;
+}
+
+@media (max-width: 767px) {
+  .form-box {
+    text-align: center;
+    margin-left: 25px;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,183 @@
+@import "../../../Shared/Shared.scss";
+@import "../../styles.scss";
+.settings {
+  grid-template-columns: repeat(autofill, (minmax(500, 1fr)));
+  .close-message {
+    resize: none;
+    border: 1px solid #ccc;
+    min-height: 150px;
+  }
+  #Email {
+    display: inline-flex;
+    width: calc(100% - 80px);
+    cursor: not-allowed;
+  }
+  .change {
+    font-weight: bold;
+    margin-left: 15px;
+  }
+
+  .Security-Info {
+    .main:not(:last-of-type) {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 15px;
+    }
+  }
+
+  .Social-Info {
+    .soc-box {
+      //تعمل مع الاب
+      &:focus-within i {
+        background-color: black;
+        color: white;
+      }
+
+      input {
+        height: 40px;
+        background-color: #f6f6f6;
+        border: 1px solid #ccc;
+        padding-left: 15px;
+        border-radius: 0 6px 6px 0;
+        flex-grow: 1;
+      }
+
+      i {
+        width: 40px;
+        height: 40px;
+        background-color: #f6f6f6;
+        border: 1px solid #ccc;
+        border-right: none;
+        border-radius: 6px 0 0 6px;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+.Widgets-Control {
+  .controlbox {
+    label {
+      display: block;
+      padding-left: 30px;
+      cursor: pointer;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -9px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid $grey-color;
+        transition: 0.5s;
+      }
+      &::after {
+        content: "\f00c";
+        font-weight: 900;
+        font-family: $font-reg;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -9px;
+        background-color: $blue-color;
+        color: white;
+        font-size: 12px;
+        height: 18px;
+        width: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: scale(0);
+        transition: 0.5s;
+      }
+      &:hover {
+        &::before {
+          border-color: $blue-color;
+        }
+      }
+    }
+    .checked {
+      display: none;
+      &:checked + label::after {
+        transform: scale(1) rotate(1turn);
+      }
+    }
+  }
+}
+.Backup-Manager {
+  .inputs {
+    // border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    .input {
+      .rad-of-frq {
+        appearance: none;
+        &:checked + label::after {
+          transform: scale(1);
+        }
+      }
+      label {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -11px;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          border: 2px solid $grey-color;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          // top: 50%;
+          // transform: translateY(-50%) scale(0);
+          transform: scale(0);
+          top: 3px;
+          left: 5px;
+
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: $blue-color;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+
+  .servers {
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+    .server-container {
+      .rad-of-serv {
+        &:checked + .server {
+          border-color: $blue-color; //not working
+        }
+      }
+      .server {
+        border: 1px solid #ccc;
+        padding-top: 10px;
+        position: relative;
+
+        label {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .settings {
+    grid-template-columns: repeat(autofill, (minmax(100, 1fr)));
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}
+// ++++++++++++++++++++++++++ --____--

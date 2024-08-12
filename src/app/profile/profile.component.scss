@@ -1,0 +1,144 @@
+@import "../../styles.scss";
+
+.profile {
+  .avatar-box {
+    width: 300px;
+    border-right: 1px solid #eee;
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+
+    .level {
+      height: 6px;
+      overflow: hidden;
+      margin: auto; //عشان يكون السبان تكون ف النص
+      width: 70%;
+
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background-color: $blue-color;
+        border-radius: 6px;
+      }
+    }
+  }
+  .info-box {
+    cursor: no-drop;
+    h4 {
+      font-weight: normal;
+      text-align: left;
+      margin: 0;
+      margin-left: 15px;
+    }
+    .box {
+      flex-wrap: wrap;
+      border-bottom: 1px solid #eee;
+      transition: 0.5s;
+      padding-bottom: 10px;
+
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+    div {
+      min-width: 250px;
+      padding: 10px 0 0;
+    }
+  }
+
+  .other-data {
+    .skills {
+      ul {
+        li {
+          padding: 15px 0;
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+          }
+          span {
+            display: inline-flex;
+            padding: 4px 10px;
+            background-color: #eee;
+            border-radius: 6px;
+            font-size: 14px;
+
+            transition: 0.5s;
+            cursor: no-drop;
+            &:hover {
+              background-color: #ddd;
+            }
+            &:not(:last-child) {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    .activities {
+      flex-grow: 2;
+      .activitey {
+        padding: 5px;
+        transition: 0.5s;
+        cursor: no-drop;
+        &:not(:last-child) {
+          border-bottom: 1px solid #eee;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+        }
+        img {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+        .date {
+          //     text-align: right;
+          margin-left: auto;
+        }
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .overwiew,
+    .other-data {
+      // display: flex;
+      flex-direction: column;
+    }
+
+    .avatar-box {
+      border-right: none;
+      width: 100%; // تعديل الاختيارات الأخرى إذا لزم الأمر
+    }
+    .info-box {
+      margin-top: 10px;
+      h4 {
+        text-align: left;
+        margin: 0;
+        font-weight: bold;
+        color: black;
+      }
+      div {
+        min-width: 250px;
+        text-align: center;
+      }
+    }
+    .activitey {
+      flex-direction: column;
+      img {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .date {
+        margin-top: 10px;
+      }
+    }
+  }
+}

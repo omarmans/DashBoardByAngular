@@ -1,0 +1,11 @@
+<div class="latest-news p-20 bg-white rad-10 txt-c-mobile">
+  <h2 class="mt-0 mb-20">Latest News</h2>
+  <div class="news-row d-flex align-center" *ngFor="let news of latestNews">
+    <img [src]="'assets/DATA&IMGS/page1/news/' + news.imgSrc" alt="" />
+    <div class="info">
+      <h3>{{ news.title }}</h3>
+      <p class="m-0 fs-14 c-grey">{{ news.paragraph }}</p>
+    </div>
+    <div class="btn-shape bg-eee fs-13 label">{{ news.duration }}</div>
+  </div>
+</div>

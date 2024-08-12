@@ -1,0 +1,18 @@
+<div
+  class="Tickets-Statistics p-20 bg-white rad-10 txt-c-mobile block-mobile"
+  #ticket
+>
+  <h2 class="mt-0 mb-10">Tickets-Statistics</h2>
+  <p class="mt-0 mb-20 c-grey">Everything About Support Tickets</p>
+  <div class="boxes d-flex txt-c gap-20 f-wrap">
+    <div class="box p-20 rad-10 fs-13 c-grey" *ngFor="let box of ticketStats">
+      <i class="{{ box.icon }} fa-2x mb-10  c-{{ box.color }}"></i>
+      <p class="c-black fw-bold fs-25 mb-5">
+        {{ grow_smozzy ? box.count : 0 }}
+      </p>
+      <!-- <p class="label"> -->
+      {{ box.label }}
+      <!-- </p> -->
+    </div>
+  </div>
+</div>

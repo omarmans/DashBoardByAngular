@@ -1,0 +1,53 @@
+// @import "../../../Shared/Shared.scss";
+@import "../../../../Shared/Shared.scss";
+@import "../../../styles.scss";
+$border: 1px solid #eee;
+.welcome {
+  overflow: hidden;
+  // width: 100%;
+  .intro {
+    img {
+      width: 300px;
+      margin-bottom: -10px;
+    }
+  }
+  .pof-avt {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    padding: 2px;
+    box-shadow: 0 0 5px #ddd;
+    margin-left: 20px;
+    margin-top: -35px;
+  }
+  .body {
+    border-top: $border;
+    border-bottom: $border;
+    & > div {
+      flex: 1;
+    }
+  }
+  .visit {
+    margin: 0 15px 15px auto;
+    background-color: $blue-alt-color;
+    transition: 0.5s;
+    &:hover {
+      background-color: $blue-color;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .welcome {
+    .intro {
+      padding-bottom: 30px !important;
+    }
+    .pof-avt {
+      margin-left: 0 !important;
+    }
+    .body > div:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

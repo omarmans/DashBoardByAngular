@@ -1,0 +1,29 @@
+<!-- <div class="Reminders p-20 bg-white rad-10 txt-c-mobile ovr-hidd p-relative">
+  <h2 class="mt-0 mb-20">Reminders</h2>
+
+  <div class="Reminders-list" *ngFor="let rem of reminders">
+    <div class="color" [style.background-color]="rem.color"></div>
+    <div class="action" [style.border-left-color]="rem.color">
+      <h3 class="mt-0">{{ rem.text }}</h3>
+      <p class="fs-13 c-grey">{{ rem.date }}</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- ############################### -->
+<!-- elzero style -->
+<div class="Reminders p-20 bg-white rad-10 txt-c-mobile ovr-hidd p-relative">
+  <h2 class="mt-0 mb-20">Reminders</h2>
+  <ul class="m-0">
+    <li *ngFor="let rem of reminders" class="d-flex align-center mt-15">
+      <span
+        class="color mr-15 d-block rad-half"
+        [style.background-color]="rem.color"
+      ></span>
+      <div class="pl-15 action">
+        <p class="fs-14 f-bold mt-0 mb-5">{{ rem.text }}</p>
+        <span class="fs-13 c-grey">{{ rem.date }}</span>
+      </div>
+    </li>
+  </ul>
+</div>

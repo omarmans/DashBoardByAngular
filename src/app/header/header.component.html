@@ -1,0 +1,46 @@
+<div class="page d-flex">
+  <!-- <div class="sidebar bg-white p-20 p-relative" *ngIf="showHeader"> -->
+  <div class="sidebar bg-white p-20 p-relative">
+    <h3 class="p-relative txt-c mt-0">{{ "omima" | uppercase }}</h3>
+    <ul>
+      <li *ngFor="let link of classesArray; let i = index">
+        <a
+          [ngClass]="{ active: i === activeLinkIndex }"
+          routerLinkActiveOptions="{ exact: true }"
+          [routerLink]="link.href"
+          (click)="setActiveLink(i)"
+          class="d-flex align-center fs-14 c-black rad-6 p-10"
+        >
+          <i [ngClass]="link.i"></i>
+          <span>{{ link.span }}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="content w-full">
+    <!-- <div class="head bg-white p-15 between-flex" *ngIf="showHeader"> -->
+    <div class="head bg-white p-15 between-flex">
+      <div class="search p-relative">
+        <input
+          class="p-10"
+          type="search"
+          name="search"
+          id="search"
+          placeholder="type a keyword"
+        />
+      </div>
+      <div class="icons d-flex align-center">
+        <i
+          class="fa-solid fa-arrow-right-from-bracket log-out"
+          (click)="log_out()"
+        ></i>
+        <span class="notification p-relative">
+          <i class="fa-regular fa-bell fa-lg"></i>
+        </span>
+        <img src="assets/DATA&IMGS/page1/avatar.png" alt="" />
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>

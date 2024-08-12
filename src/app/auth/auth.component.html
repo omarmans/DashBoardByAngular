@@ -1,0 +1,57 @@
+<p *ngIf="errMessage" class="errmsg">{{ errMessage }}</p>
+
+<div class="form-box">
+  <h1>Welcome To Omima</h1>
+  <h2>{{ is_loged_in ? "Log In" : "Sign Up" }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="user-box" *ngIf="!is_loged_in">
+      <input type="text" name="name" required="" formControlName="name" />
+      <label>Name</label>
+    </div>
+    <div class="user-box" *ngIf="!is_loged_in">
+      <input type="number" name="age" required="" formControlName="age" />
+      <label>Age</label>
+    </div>
+    <div class="user-box">
+      <input type="email" name="email" required formControlName="email" />
+      <label>Email</label>
+    </div>
+    <div class="user-box">
+      <input
+        type="password"
+        name="password"
+        [maxLength]="8"
+        [minlength]="6"
+        required=""
+        formControlName="password"
+      />
+      <label>Password</label>
+    </div>
+    <div class="user-box" *ngIf="!is_loged_in">
+      <select
+        name="gender"
+        required=""
+        formControlName="gender"
+        *ngIf="!is_loged_in"
+      >
+        <!-- <option value="" disabled selected></option> -->
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <label>Gender</label>
+    </div>
+    <button
+      [disabled]="!form.valid"
+      type="submit"
+      class="btn-shape bg-eee c-black"
+      [ngClass]="{ 'opc-half': !form.valid }"
+    >
+      {{ is_loged_in ? "Log In" : "Sign Up" }}
+    </button>
+  </form>
+  <button (click)="onSwitchMode()" class="btn-shape bg-eee c-black">
+    Switch to {{ is_loged_in ? "Sign Up" : "Log In" }}
+  </button>
+</div>
+
+<app-spinner *ngIf="On_Show_Spinner"></app-spinner>

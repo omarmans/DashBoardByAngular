@@ -1,0 +1,19 @@
+<div
+  class="last-project-prog p-20 bg-white rad-10 txt-c-mobile ovr-hidd p-relative"
+>
+  <h2 class="mt-0 mb-20">Last Project Progress</h2>
+
+  <ul class="p-relative">
+    <li
+      *ngFor="let step of steps"
+      class="{{ step.status }} mt-25 d-flex align-center"
+    >
+      {{ step.name }}
+    </li>
+  </ul>
+  <img
+    class="lunch hide-mobile"
+    src="assets/DATA&IMGS/page1/Last Project Progress/project.png"
+    alt=""
+  />
+</div>

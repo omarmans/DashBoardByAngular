@@ -1,0 +1,41 @@
+<div class="social-media p-20 bg-white rad-10 txt-c-mobile ovr-hidd p-relative">
+  <h2 class="mt-0 mb-20">Social Media Stats</h2>
+  <div class="content">
+    <div
+      *ngFor="let soc of socialMediaStats"
+      class="social"
+      [style.background-color]="soc.backgroundColor"
+    >
+      <div class="icon" [style.background-color]="soc.color">
+        <i class="{{ soc.iconClass }} h-full c-white"></i>
+      </div>
+      <div class="data">
+        <p [style.color]="soc.color">
+          {{ soc.followers }}
+        </p>
+        <a
+          href="#"
+          class="btn-shape c-white"
+          [style.background-color]="soc.color"
+          >{{ soc.linkText }}</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="social-media p-20 bg-white rad-10 p-relative">
+  <h2 class="mt-0 mb-25">Social Media Stats</h2>
+  <div class="content">
+    <div
+      *ngFor="let soc of socialMediaStats"
+      class="box p-15 p-relative mb-10 between-flex"
+      [ngClass]="soc.platform.toLowerCase()"
+      [style.background-color]="soc.color"
+    >
+      <i class="{{ soc.iconClass }} fa-2x c-white h-full center-flex"></i>
+      <span class="c-white">{{ soc.followers }}</span>
+      <a class="fs-13 c-white btn-shape" href="#">{{ soc.linkText }}</a>
+    </div>
+  </div>
+</div> -->

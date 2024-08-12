@@ -1,0 +1,59 @@
+@import "../../../styles.scss";
+
+.Latest-Post {
+  .info {
+    //     gap: 10px;
+    img {
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+    .info-data {
+      display: flex;
+      flex-direction: column;
+      h3 {
+        margin: 0;
+        margin-top: 15px;
+      }
+      p {
+        margin: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+  .post {
+    text-transform: capitalize;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    min-height: 140px;
+  }
+  .notifi {
+    i {
+      margin-right: 5px;
+      padding: 5px;
+      cursor: pointer;
+      transition: 0.5s;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+    .like {
+      i {
+        &:hover {
+          color: red;
+        }
+      }
+    }
+    .comments {
+      i {
+        &:hover {
+          color: blue;
+        }
+      }
+    }
+  }
+}
+
+.love {
+  color: red;
+}

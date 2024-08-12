@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+.Tickets-Statistics {
+  .box {
+    border: 1px solid #ccc;
+    width: calc(50% - 10px); // lol ya fnan
+  }
+}
+@media (max-width: 767px) {
+  .box {
+    //     flex: 1 هيبقو اتنين
+    flex-basis: 100%;
+  }
+}

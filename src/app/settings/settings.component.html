@@ -1,0 +1,148 @@
+<div class="settings m-20 d-grid gap-20">
+  <!-- <h1 class="p-relative">Settings</h1> -->
+  <app-title title="Settings"></app-title>
+  <div class="Site-Control p-20 bg-white rad-10">
+    <h2 class="mt-0 mb-10">Site Control</h2>
+    <p class="mt-0 mb-20 c-grey fs-15">
+      Control The Website If There Is Maintenance
+    </p>
+    <div class="main mb-15 between-flex">
+      <div class="info">
+        <span>Website Control </span>
+        <p class="c-grey mt-5 mb-0 fs-13">
+          Open/Close Website And Type The Reason
+        </p>
+      </div>
+      <app-toggle-checbox></app-toggle-checbox>
+    </div>
+    <textarea
+      class="close-message b-none p-10 rad-6 d-block w-full"
+      placeholder="Close Content Message"
+    ></textarea>
+  </div>
+  <!-- ############################### -->
+  <div class="General-Info p-20 bg-white rad-10">
+    <h2 class="mt-0 mb-10">General Info</h2>
+    <p class="mt-0 mb-20 c-grey fs-15">
+      General Information About Your Account
+    </p>
+    <div class="mb-15">
+      <label class="fs-14 d-block c-grey mb-10" for="First">First Name</label>
+      <input
+        class="b-none p-10 rad-6 d-block w-full border-ccc"
+        type="text"
+        id="First"
+        placeholder="First Name"
+      />
+    </div>
+    <div class="mb-15">
+      <label class="fs-14 d-block c-grey mb-10" for="Last">Last Name</label>
+      <input
+        class="b-none p-10 rad-6 d-block w-full border-ccc"
+        type="text"
+        id="Last"
+        placeholder="Last Name"
+      />
+    </div>
+    <div class="">
+      <label class="fs-14 d-block c-grey mb-10" for="Email"> Email</label>
+      <input
+        class="b-none p-10 rad-6 d-block w-full border-ccc opc-half"
+        type="email"
+        id="Email"
+        placeholder="Email Name"
+        disabled
+      />
+      <a href="" class="change c-blue">Change</a>
+    </div>
+  </div>
+  <!-- #################################### -->
+  <div class="Security-Info p-20 bg-white rad-10">
+    <h2 class="mt-0 mb-10">Security Info</h2>
+    <p class="mt-0 mb-20 c-grey fs-15">
+      Security Information About Your Account
+    </p>
+    <div class="main mb-15 between-flex">
+      <div class="info">
+        <span>Password </span>
+        <p class="c-grey mt-5 mb-0 fs-13">Last Change On 25/10/2021</p>
+      </div>
+      <a href="#" class="change bg-blue c-white btn-shape">Change</a>
+    </div>
+    <div class="main mb-15 between-flex">
+      <div class="info mb-10">
+        <span>Two-Factor Authentication </span>
+        <p class="c-grey mt-5 mb-0 fs-13">Enable/Disable The Feature</p>
+      </div>
+      <app-toggle-checbox></app-toggle-checbox>
+    </div>
+    <div class="main mb-15 between-flex">
+      <div class="info">
+        <span>Devices </span>
+        <p class="c-grey mt-5 mb-0 fs-13">Check The Login Devices List</p>
+      </div>
+      <a href="#" class="change bg-blue c-white btn-shape">Devices</a>
+    </div>
+  </div>
+  <!-- ########################### -->
+  <div class="Social-Info p-20 bg-white rad-10">
+    <h2 class="mt-0 mb-10">Social Info</h2>
+    <p class="mt-0 mb-20 c-grey fs-15">Social Media Information</p>
+    <div
+      class="soc-box d-flex align-center mb-15"
+      *ngFor="let i of socialIcons"
+    >
+      <i class="{{ i.iconClass }} center-flex c-grey"></i>
+      <input class="w-full" type="text" placeholder="{{ i.platform }}" />
+    </div>
+  </div>
+</div>
+<!-- ##################### -->
+<div class="Widgets-Control p-20 bg-white rad-10">
+  <h2 class="mt-0 mb-10">Widgets Control</h2>
+  <p class="mt-0 mb-20 c-grey fs-15">Show/Hide Widgets</p>
+  <div
+    class="controlbox d-flex align-center mb-15"
+    *ngFor="let Widget of WidgetsArray; let i = index"
+  >
+    <input
+      type="checkbox"
+      id="{{ Widget }}"
+      class="checked"
+      [checked]="i === 0"
+    />
+    <label for="{{ Widget }}">{{ Widget }}</label>
+  </div>
+</div>
+<!-- ############################### -->
+<div class="Backup-Manager p-20 bg-white rad-10">
+  <h2 class="mt-0 mb-10">Backup Manager</h2>
+  <p class="mt-0 mb-20 c-grey fs-15">Control Backup Time And Location</p>
+  <div class="inputs">
+    <div class="input mb-15" *ngFor="let frq of frequencyOptions">
+      <input type="radio" value="{{ frq }}" id="{{ frq }}" class="rad-of-frq" />
+      <label for="{{ frq }}">{{ frq }}</label>
+    </div>
+  </div>
+  <!-- ###### -->
+  <div class="servers">
+    <div
+      *ngFor="let serv of serversArray"
+      class="server-container d-flex align-center txt-c"
+    >
+      <input
+        type="radio"
+        class="rad-of-serv"
+        name="servers"
+        id="{{ serv.name }}"
+        value="{{ serv.name }}"
+      />
+      <div class="server mb-15 w-full rad-10">
+        <label for="{{ serv.name }}" class="d-block mb-15">
+          <i class="{{ serv.iconClass }} d-block mb-10"></i>
+          {{ serv.name }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

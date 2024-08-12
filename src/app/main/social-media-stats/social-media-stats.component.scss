@@ -1,0 +1,78 @@
+@import "../../../styles.scss";
+.social-media {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .social {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .icon {
+        padding: 20px;
+        width: 100px;
+        // height: 100%;
+        text-align: center;
+        transition: 0.5s;
+        &:hover {
+          transform: rotate(6deg);
+        }
+        i {
+          width: 100%;
+          font-weight: bold;
+          font-size: 65px;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      .data {
+        padding: 0 15px 0 15px;
+        flex-grow: 1;
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+// .social-media {
+//   .content {
+//     display: flex;
+//     flex-direction: column;
+//     .box {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+//       padding: 15px;
+//       position: relative;
+//       margin-bottom: 10px;
+
+//       .fa-2x {
+//         font-size: 2em;
+//       }
+
+//       .btn-shape {
+//         padding: 5px 10px;
+//         border-radius: 5px;
+//       }
+
+//       &.twitter {
+//         background-color: #1da1f2;
+//       }
+
+//       &.facebook {
+//         background-color: #3b5998;
+//       }
+
+//       &.youtube {
+//         background-color: #ff0000;
+//       }
+
+//       &.linkedin {
+//         background-color: #0077b5;
+//       }
+//     }
+//   }
+// }

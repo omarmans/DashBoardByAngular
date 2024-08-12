@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+.uploads {
+  .files {
+    &:hover {
+      transform: scale(0.9);
+      background-color: #eee;
+    }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .data-info {
+    text-align: left;
+  }
+}

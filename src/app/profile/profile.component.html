@@ -1,0 +1,66 @@
+<app-title title="Profile"></app-title>
+<div class="profile m-20">
+  <div class="overwiew bg-white rad-10 d-flex align-center txt-c p-20">
+    <div class="avatar-box">
+      <img
+        src="assets/DATA&IMGS/page1/avatar.png"
+        class="rad-half mb-10"
+        alt=""
+      />
+      <h3 class="m-0">OmarMansor</h3>
+      <p class="fs-14 mt-10 c-grey">level 20</p>
+      <div class="level rad-6 bg-eee p-relative">
+        <span style="width: 70%"></span>
+      </div>
+      <div class="rating mt-10 mb-10">
+        <i class="fa-solid fa-star c-orange fs-13"></i>
+        <i class="fa-solid fa-star c-orange fs-13"></i>
+        <i class="fa-solid fa-star c-orange fs-13"></i>
+        <i class="fa-solid fa-star c-orange fs-13"></i>
+        <i class="fa-solid fa-star c-orange fs-13"></i>
+      </div>
+      <p class="c-grey fs-13 m-0">450 Rating</p>
+    </div>
+    <!-- ######################################## -->
+    <div class="info-box w-full">
+      <div class="box p-20 d-flex align-center" *ngFor="let info of infoArray">
+        <h4 class="c-grey w-full fs-15">{{ info.category }}</h4>
+        <div class="fs-14" *ngFor="let detail of info.details">
+          <span class="c-grey">{{ detail.label }} : </span>
+          <span> {{ detail.value }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- w-full for h4 to be standalone -->
+  <!-- ###################### -->
+  <div class="other-data d-flex gap-20">
+    <div class="skills bg-white rad-10 p-20 mt-20">
+      <h2 class="mt-0 mb-10">My Skills</h2>
+      <p class="mt-0 mb-20 c-grey fs-15">Complete Skills List</p>
+      <ul class="m-0 txt-c-mobile">
+        <li *ngFor="let skill of skillsArray">
+          <span class="" *ngFor="let one of skill">{{ one }} </span>
+        </li>
+      </ul>
+    </div>
+    <div class="activities bg-white rad-10 p-20 mt-20">
+      <h2 class="mt-0 mb-10">Latest Activities</h2>
+      <p class="mt-0 mb-20 c-grey fs-15">Latest Activities Done By The User</p>
+      <div
+        class="activitey d-flex align-center txt-c-mobile"
+        *ngFor="let act of activitiesArray"
+      >
+        <img src="assets/DATA&IMGS/page3/{{ act.imgSrc }}" alt="" />
+        <div class="act-info">
+          <span class="mb-10 d-block">{{ act.category }}</span>
+          <span class="c-grey">{{ act.description }}</span>
+        </div>
+        <div class="date">
+          <span class="mb-10 d-block">{{ act.time }}</span>
+          <span class="c-grey">{{ act.day }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

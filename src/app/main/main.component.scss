@@ -1,0 +1,16 @@
+@import "../../styles.scss";
+.page {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    gap: 10px;
+  }
+}

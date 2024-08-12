@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+
+.plans-page {
+  .plans {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    .plan {
+      .top {
+        border: 3px solid white;
+        outline: 3px solid #ccc;
+        .price {
+          position: relative;
+          font-weight: bold;
+          width: fit-content; //عشان $ متسرحش
+          margin: auto;
+          font-size: 40px;
+          span {
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 26px;
+          }
+        }
+      }
+      ul {
+        li {
+          padding: 15px 0;
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          border-bottom: 1px solid #eee;
+          //     justify-content: space-around;
+          i:first-child {
+            font-size: 18px;
+            margin-right: 5px;
+          }
+          .help {
+            margin-left: auto;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .plans {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-left: 10px;
+    margin-right: 10px;
+    gap: 10px;
+  }
+}

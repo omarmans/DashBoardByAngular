@@ -1,0 +1,42 @@
+@import "../../../Shared/Shared.scss";
+label {
+  input {
+    appearance: none;
+    display: none; //عشان المساحه
+    &:checked + div {
+      background-color: $blue-color;
+    }
+    &:checked + div::before {
+      left: 50px;
+      color: $blue-color;
+      content: "\f00c";
+      transform: scale(1turn);
+    }
+  }
+
+  div {
+    background-color: #ccc;
+    width: 78px;
+    height: 32px;
+    border-radius: 16px;
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+    &::before {
+      font-family: $font-reg;
+      content: "\f00d";
+      font-weight: 900;
+      background-color: white;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.5s;
+    }
+  }
+}

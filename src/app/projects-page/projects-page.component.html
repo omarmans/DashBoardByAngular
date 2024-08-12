@@ -1,0 +1,43 @@
+<div class="projects-page">
+  <app-title title="Projects"></app-title>
+  <div class="projects d-grid m-20 gap-20">
+    <div
+      class="project bg-white p-20 rad-6 p-relative"
+      *ngFor="let project of projectsArray"
+    >
+      <span class="date fs-13 c-grey">{{ project.date }}</span>
+      <h4 class="m-0">{{ project.title }}</h4>
+      <p class="c-grey fs-14 mt-14 mb-10 description">
+        {{ project.description }}
+      </p>
+      <div class="teams_member">
+        <a href="#">
+          <img
+            *ngFor="let img of project.team"
+            src="assets/DATA&IMGS/Teams/{{ img }}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="task-words d-flex">
+        <span class="fs-13 rad-6 bg-eee" *ngFor="let task of project.tasks">
+          {{ task }}
+        </span>
+      </div>
+      <div class="progress-cost d-flex">
+        <div class="progress">
+          <span
+            [ngStyle]="{
+              width: project.progress.width,
+              'background-color': project.progress.color
+            }"
+          ></span>
+        </div>
+        <div class="cost fs-14 c-grey">
+          <i class="fa-solid fa-dollar-sign"></i>
+          {{ project.cost }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
