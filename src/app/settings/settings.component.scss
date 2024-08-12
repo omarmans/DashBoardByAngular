@@ -1,5 +1,4 @@
 @import "../../../Shared/Shared.scss";
-@import "../../styles.scss";
 .settings {
   grid-template-columns: repeat(autofill, (minmax(500, 1fr)));
   .close-message {

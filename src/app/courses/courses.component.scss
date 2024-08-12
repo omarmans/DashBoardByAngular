@@ -1,5 +1,3 @@
-@import "../../styles.scss";
-
 .courses {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   .course {

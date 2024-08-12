@@ -1,4 +1,3 @@
-@import "../../styles.scss";
 .errmsg {
   color: #dc3545; /* لون النص الأحمر */
   background-color: #f8d7da; /* خلفية خفيفة */
@@ -102,8 +101,31 @@ select option {
 
 @media (max-width: 767px) {
   .form-box {
-    text-align: center;
-    margin-left: 25px;
+    width: 50%;
     padding: 20px;
+    box-shadow: none; /* Optional: Remove shadow for mobile */
+    border-radius: 8px; /* Optional: Adjust border-radius for mobile */
+    top: 20%; /* Move the form slightly down for mobile */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form-box h1,
+  .form-box h2 {
+    font-size: 1.5rem; /* Adjust font size for mobile */
+  }
+
+  .form-box .user-box input,
+  .form-box .user-box select {
+    font-size: 14px; /* Adjust font size for inputs/select */
+  }
+
+  .form-box .user-box label {
+    font-size: 14px; /* Adjust label font size */
+  }
+
+  button {
+    height: 40px; /* Increase button height for easier tapping */
+    font-size: 14px; /* Adjust button font size */
   }
 }
